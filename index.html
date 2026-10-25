@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Eric Hell · Portfolio</title>
+  <meta name="description" content="Portfolio of Eric Hell, MSc student in Robotics, Systems and Control at ETH Zürich: autonomous drones, robotic manipulation, industrial software, machine learning for mechanics and medical device development.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">Eric Hell</a>
+    <nav aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Intro -->
+  <section class="hero wrap">
+    <p class="eyebrow">MSc Robotics, Systems and Control · ETH Zürich</p>
+    <h1>Eric Hell</h1>
+    <p class="lead">
+      I studied mechanical engineering at ETH Zürich and am now doing my Master's in
+      robotics, with a focus on control and robotic hardware. This page collects the
+      projects I have worked on in student teams, in research, in industry and in personal projects.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#projects">See the projects</a>
+    </div>
+    <dl class="hero-facts">
+      <div><dt>Based in</dt><dd>Zürich, Switzerland</dd></div>
+      <div><dt>Languages</dt><dd>German, English, French</dd></div>
+    </dl>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="projects">
+    <div class="wrap">
+      <h2 class="section-title">Selected projects</h2>
+    </div>
+
+    <!-- 01 VETRA -->
+    <article class="project wrap" id="vetra">
+      <header class="project-head">
+        <span class="project-num">01</span>
+        <div>
+          <h3>VETRA: autonomous drone interception</h3>
+          <p class="project-meta">Co-founder · since June 2026 · Basel</p>
+          <ul class="tags">
+            <li>Jetson Orin Nano</li><li>Pixhawk</li><li>ROS2</li><li>Object tracking</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="project-body two-col">
+        <div class="prose">
+          <p>
+            Small, fast quadcopters are a growing risk for infrastructure and public events.
+            Most existing counter-drone systems are expensive, need a lot of staff and are
+            installed in one place. With VETRA we are working on a mobile interceptor that
+            flies to a target drone on its own, catches it with a net and carries it out of
+            the danger zone. I started VETRA together with a friend, who is my co-founder.
+          </p>
+          <h4>Technical implementation</h4>
+          <ul class="list">
+            <li>Integrating perception and flight control on real hardware: Jetson Orin Nano, Pixhawk flight controller and an RGB camera.</li>
+            <li>Autonomous flight, object tracking and closed-loop approach towards a tracked target.</li>
+            <li>Currently: RL-based path planning, the net mechanism and the first functional prototype.</li>
+          </ul>
+          <h4>What I work on</h4>
+          <ul class="list">
+            <li>Drone hardware</li>
+            <li>Net mechanism</li>
+          </ul>
+        </div>
+
+        <div class="panel" aria-label="Project progress">
+          <h4>Progress</h4>
+          <ol class="steps">
+            <li class="done">Autonomous flight</li>
+            <li class="done">Object tracking</li>
+            <li class="done">Autonomous flight towards the tracked object</li>
+            <li>Intercept flight</li>
+            <li>Net launch with 360° shot</li>
+            <li>Carry the target out of the danger zone</li>
+          </ol>
+          <p class="legend"><span class="dot done"></span>Achieved <span class="dot"></span>Next steps</p>
+        </div>
+      </div>
+
+      <figure class="media-full">
+        <video poster="assets/vetra-tracking-poster.jpg" controls autoplay muted loop playsinline preload="metadata">
+          <source src="assets/vetra-tracking.webm" type="video/webm">
+          <source src="assets/vetra-tracking.mp4" type="video/mp4">
+        </video>
+        <figcaption>Hand-tracking test: detection output and processing metrics (left), scene from outside (right).</figcaption>
+      </figure>
+
+      <div class="media-grid pair">
+        <figure>
+          <img class="on-light contain" src="assets/vetra-concept.png" alt="Rendering of the VETRA interceptor drone with its red net launcher underneath" loading="lazy">
+          <figcaption>VETRA interceptor, concept design</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/vetra-prototype.jpg" alt="Prototype quadcopter with Jetson computer, camera and GPS hovering in a garden" loading="lazy">
+          <figcaption>Current test platform</figcaption>
+        </figure>
+      </div>
+
+      <figure class="sequence">
+        <div class="sequence-row">
+          <img src="assets/vetra-seq-1.jpg" alt="Interceptor launching its net towards a target drone" loading="lazy">
+          <img src="assets/vetra-seq-2.jpg" alt="Net fully spread with the target drone inside" loading="lazy">
+          <img src="assets/vetra-seq-3.jpg" alt="Interceptor carrying the entangled drone away" loading="lazy">
+        </div>
+        <figcaption>Concept of the target sequence: net shot, entangle, carry out.</figcaption>
+      </figure>
+    </article>
+
+    <!-- 02 Real-World-Robotics -->
+    <article class="project wrap" id="rwr">
+      <header class="project-head">
+        <span class="project-num">02</span>
+        <div>
+          <h3>Real-World-Robotics: data collection for a dexterous robotic hand</h3>
+          <p class="project-meta">Student · ongoing since September 2026 · Module run by the Soft Robotics Lab (SRL), ETH Zürich</p>
+          <ul class="tags">
+            <li>NVIDIA Isaac Sim / Lab</li><li>Reinforcement learning</li><li>Imitation learning</li><li>Tactile sensing</li><li>Mechatronics</li><li>Prototyping</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="project-body two-col">
+        <div class="prose">
+          <p>
+            Real-World-Robotics is a project module at ETH Zürich, run by the Soft
+            Robotics Lab. The project is ongoing and of great interest to me, because it brings
+            robotic hardware, sensing and learning together on a real system.
+          </p>
+          <h4>What it is</h4>
+          <p>
+            We are developing a Universal Manipulation Interface (UMI) for a 17-DoF
+            tendon-driven robotic hand. It records joint and tactile sensor data 1:1 with the
+            hand, together with its global position, while manipulation tasks are performed.
+          </p>
+          <h4>Our goal</h4>
+          <p>
+            Use this data to train reinforcement- and imitation-learning policies for dexterous
+            manipulation, developed in NVIDIA Isaac Sim and Isaac Lab and tested on the real hand.
+          </p>
+        </div>
+
+        <div class="panel status">
+          <p class="status-text">Results will be published on this page on</p>
+          <p class="status-date">14 December 2026</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 Signature app -->
+    <article class="project wrap" id="signature">
+      <header class="project-head">
+        <span class="project-num">03</span>
+        <div>
+          <h3>Digital training signatures at Endress+Hauser</h3>
+          <p class="project-meta">Working student · 2023 – 2026 · Baselland</p>
+          <ul class="tags">
+            <li>Python</li><li>C++</li><li>Process automation</li><li>Production</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="stats">
+        <div class="stat"><span class="stat-value">CHF 100'000+</span><span class="stat-label">saved per year</span></div>
+        <div class="stat"><span class="stat-value">2'000+</span><span class="stat-label">users across 3 production plants</span></div>
+        <div class="stat"><span class="stat-value">2024</span><span class="stat-label">E+H Innovation Award</span><span class="stat-note">Nominee</span></div>
+      </div>
+
+      <div class="flow" aria-label="Workflow before and after">
+        <div class="flow-row">
+          <span class="flow-label">Before</span>
+          <ol class="flow-steps muted">
+            <li>Form written in Word</li><li>Printed</li><li>Signed on paper</li><li>Filed in a closet</li>
+          </ol>
+        </div>
+        <div class="flow-row">
+          <span class="flow-label accent">After</span>
+          <ol class="flow-steps">
+            <li>Form generated automatically</li><li>Worker data filled in</li><li>Signed at the machine</li><li>Tracked and reminded</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="three-col">
+        <div>
+          <h4>The problem</h4>
+          <p>Every production machine requires a training signature from the people who operate it. The forms were written by hand in Word, printed, signed and stored in a closet: thousands of documents, no overview and no reminders when a training was due.</p>
+        </div>
+        <div>
+          <h4>What I built</h4>
+          <p>A Python and C++ application that generates the documents automatically. The right form opens with the worker's data already filled in, it is signed digitally at the machine, and missing signatures are tracked and followed up.</p>
+        </div>
+        <div>
+          <h4>Result</h4>
+          <p>The paper workflow is gone end to end. Records are audit-proof and can be found in seconds. The tool is live in three plants and used daily.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 Bachelor thesis -->
+    <article class="project wrap" id="thesis">
+      <header class="project-head">
+        <span class="project-num">04</span>
+        <div>
+          <h3>Bachelor thesis: ML micro-macro relations for random fibre networks</h3>
+          <p class="project-meta">Grade 6.0 / 6.0 · ETH Zürich, Institute for Mechanical Systems (Mazza group) · 2026</p>
+          <ul class="tags">
+            <li>Residual NNs</li><li>PCE / Sobol'</li><li>Continuum mechanics</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="three-col">
+        <div>
+          <h4>Challenge</h4>
+          <p>A recent continuum theory for non-affine fibre networks<sup><a href="#ref-1">[1]</a></sup> needs fibre-stretch distributions as input, which normally come from costly discrete simulations. I explored whether machine learning can predict fibre behaviour from local geometry instead.</p>
+        </div>
+        <div>
+          <h4>Method</h4>
+          <ul class="list">
+            <li>Sensitivity analysis with polynomial chaos expansion (PCE) and Sobol' indices.</li>
+            <li>Deep residual neural networks trained with a distribution-aware Sinkhorn loss.</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Results</h4>
+          <ul class="list">
+            <li>Local information is enough for accurate fibre-stretch prediction.</li>
+            <li>Most cases below 10&nbsp;% energy error, some below 2&nbsp;%.</li>
+            <li>Shows the potential of ML for using the continuum theory in practice.</li>
+          </ul>
+        </div>
+      </div>
+
+      <figure class="figure figure-center">
+        <a href="assets/thesis-distributions.jpg" target="_blank" rel="noopener">
+          <img src="assets/thesis-distributions.jpg" alt="Six histogram panels comparing true, predicted and affine fibre stretch distributions over increasing load steps" loading="lazy">
+        </a>
+        <figcaption>Predicted fibre-stretch distribution (red) against the true distribution (green) and the affine assumption used in standard continuum approaches (blue), at increasing load steps. Click to enlarge.</figcaption>
+      </figure>
+
+      <div class="project-body">
+        <p class="small">Supervision and support: Prof. Edoardo Mazza, Dr. Alex Ehret, Dr. Ehsan Hosseini, Sara Mauro, Haotian Xu.</p>
+        <p class="small ref" id="ref-1">[1] Britt, B. R., &amp; Ehret, A. E. (2022). Constitutive modelling of fibre networks with stretch distributions. Part I: Theory and illustration. <em>Journal of the Mechanics and Physics of Solids</em>, 167, 104960. <a href="https://doi.org/10.1016/j.jmps.2022.104960" target="_blank" rel="noopener">doi:10.1016/j.jmps.2022.104960</a></p>
+      </div>
+    </article>
+
+    <!-- 05 CeraSeal -->
+    <article class="project wrap" id="ceraseal">
+      <header class="project-head">
+        <span class="project-num">05</span>
+        <div>
+          <h3>CeraSeal: surgical technology for C-section repair</h3>
+          <p class="project-meta">ETH Focus Project · grade 6.0 / 6.0 · 9-person team · Sep 2025 – Jun 2026</p>
+          <ul class="tags">
+            <li>Machine design</li><li>Mechatronics</li><li>Strain analysis</li><li>Medical devices</li>
+          </ul>
+        </div>
+      </header>
+
+      <div class="project-body two-col">
+        <div class="prose">
+          <p>An interdisciplinary student team developing a PLA/PCL patch that reinforces the closure of the uterus after a C-section and supports healing. The work covered patch manufacturing, mechanical testing, a surgical simulation platform and ultrasound sensing.</p>
+          <h4>My contributions</h4>
+          <ul class="list">
+            <li>Designed and built a custom calendering machine for controlled patch manufacturing.</li>
+            <li>Developed tracking and strain-mapping analysis to quantify stress concentrations at the sutures and the reinforcement from the patch.</li>
+          </ul>
+          <h4>Outcome</h4>
+          <ul class="list">
+            <li>Working patch prototypes combining mechanical reinforcement, sealing and ultrasound visibility.</li>
+            <li>Strain analysis software that tracks markers and evaluates how the patch integrates mechanically with the tissue.</li>
+          </ul>
+          <p class="small">Partners: University of Zurich, University Hospital Zurich, Balgrist Spinal Cord Injury Center, Zurich University of the Arts. There is no public project website because of an NDA; the IP is owned by ZüriMed AG.</p>
+        </div>
+        <div class="media-grid pair small-pair stacked">
+          <figure>
+            <img src="assets/ceraseal-platform.jpg" alt="Surgical simulation platform with a skin-coloured top and a dome-shaped tissue model" loading="lazy">
+            <figcaption>Surgical simulation platform</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/ceraseal-patch.jpg" alt="Grey fibrous PLA/PCL patch" loading="lazy">
+            <figcaption>PLA/PCL patch</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <figure class="figure media-content">
+        <video poster="assets/ceraseal-tracking-poster.jpg" controls autoplay muted loop playsinline preload="metadata">
+          <source src="assets/ceraseal-tracking.webm" type="video/webm">
+          <source src="assets/ceraseal-tracking.mp4" type="video/mp4">
+        </video>
+        <figcaption>Marker tracking on a tissue sample under load, used for the strain analysis.</figcaption>
+      </figure>
+
+      <div class="project-body two-col machine">
+        <figure class="figure">
+          <img src="assets/ceraseal-calendering-machine.jpg" alt="Calendering machine with heated steel rollers in an aluminium frame behind a transparent cover, with a touch display on top" loading="lazy">
+          <figcaption>Calendering machine I designed and built for patch manufacturing</figcaption>
+        </figure>
+        <div class="panel specs">
+          <h4>Calendering machine</h4>
+          <p>Custom machine for producing the patch under controlled temperature and pressure.</p>
+          <dl class="spec-list">
+            <div><dt>Heating</dt><dd>Rollers heated with a special heating oil</dd></div>
+            <div><dt>Temperature range</dt><dd>25 – 150&nbsp;°C</dd></div>
+            <div><dt>Accuracy</dt><dd>±1&nbsp;°C</dd></div>
+            <div><dt>Pressure</dt><dd>Variable settings</dd></div>
+          </dl>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="band">
+    <div class="wrap">
+      <h2 class="section-title">Experience and education</h2>
+      <div class="timeline-grid">
+        <div>
+          <h3 class="col-title">Work and projects</h3>
+          <ol class="timeline">
+            <li><span class="when">Sep 2026 – now</span><strong>Student, Real-World-Robotics</strong><span>Module run by the Soft Robotics Lab, ETH Zürich</span></li>
+            <li><span class="when">Jun 2026 – now</span><strong>Co-founder, VETRA</strong><span>Basel</span></li>
+            <li><span class="when">Sep 2025 – Jun 2026</span><strong>R&amp;D engineer, CeraSeal Focus Project</strong><span>ETH Zürich, Balgrist Campus</span></li>
+            <li><span class="when">Sep 2024 – Aug 2026</span><strong>Teaching assistant, Mechanics I and Computer Science II</strong><span>ETH Zürich · exercise sessions for up to 75 students</span></li>
+            <li><span class="when">Jun 2023 – Sep 2026</span><strong>Working student, mechanical engineering</strong><span>Endress+Hauser</span></li>
+            <li><span class="when">Feb 2023 – Jun 2023</span><strong>Mechanical engineering intern</strong><span>Endress+Hauser · programming, design, tooling, manufacturing, welding</span></li>
+            <li><span class="when">Jul 2022 – Dec 2022</span><strong>Military service</strong><span>Swiss Armed Forces · mechanised reconnaissance</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="col-title">Education</h3>
+          <ol class="timeline">
+            <li><span class="when">2027</span><strong>MSc exchange semester</strong><span>National University of Singapore</span></li>
+            <li><span class="when">Sep 2026 – now</span><strong>MSc Robotics, Systems and Control</strong><span>ETH Zürich · focus on control and robotic hardware</span></li>
+            <li><span class="when">Sep 2023 – Aug 2026</span><strong>BSc Mechanical Engineering</strong><span>ETH Zürich · GPA 5.41 / 6.0</span></li>
+            <li><span class="when">until 2022</span><strong>High school (Matura)</strong><span>Switzerland</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="wrap skills-section">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills">
+      <div><h3>Programming</h3><p>Python, C++, ROS2, Linux, Git</p></div>
+      <div><h3>Robotics and ML</h3><p>PyTorch, deep neural networks, object tracking, perception and planning, model predictive control</p></div>
+      <div><h3>Simulation and CAD</h3><p>NVIDIA Isaac Sim, Isaac Lab, Autodesk Fusion</p></div>
+      <div><h3>Hardware</h3><p>NVIDIA Jetson, Pixhawk, Arduino, sensor and actuator integration, mechanical design, rapid prototyping, welding</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">© 2026 Eric Hell</div>
+</footer>
+
+</body>
+</html>
