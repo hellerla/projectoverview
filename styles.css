@@ -172,6 +172,8 @@ figcaption { font-size: 13.5px; color: var(--ink-3); margin-top: 10px; line-heig
 .media-grid.pair { grid-template-columns: 1fr 1fr; }
 .media-grid.pair img { aspect-ratio: 4 / 3; object-fit: cover; }
 .media-grid.pair img.contain { object-fit: contain; padding: 4% 6%; }
+.media-grid.trio { grid-template-columns: repeat(3, 1fr); }
+.media-grid.trio img { aspect-ratio: 4 / 3; object-fit: cover; }
 img.on-light { background: #f1f1ef; }
 .media-grid.small-pair { margin: 0; }
 .media-grid.stacked { grid-template-columns: 1fr; gap: 24px; }
@@ -262,6 +264,8 @@ img.on-light { background: #f1f1ef; }
   .project { padding-top: 56px; padding-bottom: 56px; }
   .media-full { width: calc(100vw - 32px); margin-top: 40px; }
   .media-grid, .sequence-row { gap: 10px; }
+  .media-grid.trio { grid-template-columns: 1fr 1fr; }
+  .media-grid.trio figure:last-child { grid-column: 1 / -1; }
   .stats { grid-template-columns: 1fr; gap: 12px; }
   .flow-row { grid-template-columns: 1fr; gap: 6px; }
   .flow-steps { grid-template-columns: 1fr 1fr; }
