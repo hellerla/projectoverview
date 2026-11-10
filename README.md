@@ -5,7 +5,7 @@ The full page with all projects: https://hellerla.github.io/projectoverview/
 
 ## VETRA: hand-tracking test
 
-[![VETRA hand-tracking test](assets/vetra-tracking.gif)](assets/vetra-tracking.mp4)
+[![VETRA hand-tracking test](assets/vetra/tracking.gif)](assets/vetra/tracking.mp4)
 
 Detection output and processing metrics (left), scene from outside (right). Click the preview for the full-quality video.
 
