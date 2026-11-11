@@ -181,6 +181,8 @@ img.on-light { background: #f1f1ef; }
 .media-content { margin: 48px 0 0 72px; }
 .media-grid.video-pair { margin-top: 48px; align-items: start; }
 .media-grid video { border-radius: var(--radius); width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--bg-soft); }
+/* Safari ignores border-radius on playing videos; clip-path keeps the corners rounded like the images */
+.media-grid video, .media-full video, .figure video { clip-path: inset(0 round var(--radius)); }
 .side-stack { display: grid; gap: 24px; }
 .sequence { margin: 20px 0 0 72px; }
 .sequence-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
