@@ -179,6 +179,9 @@ img.on-light { background: #f1f1ef; }
 .media-grid.stacked { grid-template-columns: 1fr; gap: 24px; }
 .media-grid.stacked img { aspect-ratio: 16 / 10; }
 .media-content { margin: 48px 0 0 72px; }
+.media-grid.video-pair { margin-top: 48px; align-items: start; }
+.media-grid video { border-radius: var(--radius); width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--bg-soft); }
+.side-stack { display: grid; gap: 24px; }
 .sequence { margin: 20px 0 0 72px; }
 .sequence-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .sequence img { aspect-ratio: 5 / 6; object-fit: cover; }
@@ -255,6 +258,10 @@ img.on-light { background: #f1f1ef; }
   .project-num { padding-top: 0; }
   .project-body, .media-grid, .sequence, .stats, .flow, .three-col, .media-content { margin-left: 0; }
   .media-grid.stacked { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+@media (max-width: 640px) {
+  .media-grid.video-pair { grid-template-columns: 1fr; gap: 24px; margin-top: 36px; }
 }
 
 @media (max-width: 640px) {
