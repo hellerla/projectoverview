@@ -181,6 +181,9 @@ img.on-light { background: #f1f1ef; }
 .media-content { margin: 48px 0 0 72px; }
 .media-grid.video-pair { margin-top: 48px; align-items: start; }
 .media-grid video { border-radius: var(--radius); width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--bg-soft); }
+/* A 16:9 video next to a portrait one shown at 3:4: these column weights give both the same height */
+.media-grid.video-pair.with-portrait { grid-template-columns: 64fr 27fr; }
+.media-grid .portrait video { aspect-ratio: 3 / 4; object-position: top; }
 /* Safari ignores border-radius on playing videos; clip-path keeps the corners rounded like the images */
 .media-grid video, .media-full video, .figure video { clip-path: inset(0 round var(--radius)); }
 .side-stack { display: grid; gap: 24px; }
@@ -260,6 +263,11 @@ img.on-light { background: #f1f1ef; }
   .project-num { padding-top: 0; }
   .project-body, .media-grid, .sequence, .stats, .flow, .three-col, .media-content { margin-left: 0; }
   .media-grid.stacked { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+@media (max-width: 760px) {
+  .media-grid.video-pair.with-portrait { grid-template-columns: 1fr; gap: 24px; }
+  .media-grid.with-portrait .portrait { width: 100%; max-width: 420px; margin: 0 auto; }
 }
 
 @media (max-width: 640px) {

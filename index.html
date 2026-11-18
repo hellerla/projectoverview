@@ -172,20 +172,20 @@
         </div>
       </div>
 
-      <div class="media-grid pair video-pair">
+      <div class="media-grid pair video-pair with-portrait">
         <figure>
           <video poster="assets/rwr/orca-task-1-poster.jpg" controls autoplay muted loop playsinline preload="metadata">
             <source src="assets/rwr/orca-task-1.webm" type="video/webm">
             <source src="assets/rwr/orca-task-1.mp4" type="video/mp4">
           </video>
-          <figcaption>Task 1 of the course: the robotic hand turns a cube in its palm, with the goal of turning it as fast as possible. The hand's state is visualised on the laptop.</figcaption>
+          <figcaption>Task 1 of the course: the robotic hand turns a cube in its palm, with the goal of turning it as fast as possible.</figcaption>
         </figure>
-        <figure>
-          <video poster="assets/rwr/simulation-poster.jpg" controls autoplay muted loop playsinline preload="metadata">
-            <source src="assets/rwr/simulation.webm" type="video/webm">
-            <source src="assets/rwr/simulation.mp4" type="video/mp4">
+        <figure class="portrait">
+          <video poster="assets/rwr/orca-cube-tracking-poster.jpg" controls autoplay muted loop playsinline preload="metadata">
+            <source src="assets/rwr/orca-cube-tracking.webm" type="video/webm">
+            <source src="assets/rwr/orca-cube-tracking.mp4" type="video/mp4">
           </video>
-          <figcaption>Simulation: the hand rotating a cube in its palm.</figcaption>
+          <figcaption>Task 1, camera view: the detected cube pose (green wireframe) visibly lags behind the real cube. The policy was trained in simulation with the same lag.</figcaption>
         </figure>
       </div>
     </article>
