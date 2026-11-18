@@ -183,7 +183,7 @@ img.on-light { background: #f1f1ef; }
 .media-grid video { border-radius: var(--radius); width: 100%; aspect-ratio: 16 / 9; object-fit: cover; background: var(--bg-soft); }
 /* A 16:9 video next to a portrait one shown at 3:4: these column weights give both the same height */
 .media-grid.video-pair.with-portrait { grid-template-columns: 64fr 27fr; }
-.media-grid .portrait video { aspect-ratio: 3 / 4; object-position: top; }
+.media-grid .portrait video { aspect-ratio: 3 / 4; }
 /* Safari ignores border-radius on playing videos; clip-path keeps the corners rounded like the images */
 .media-grid video, .media-full video, .figure video { clip-path: inset(0 round var(--radius)); }
 .side-stack { display: grid; gap: 24px; }
